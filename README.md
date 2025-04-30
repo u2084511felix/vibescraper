@@ -51,7 +51,7 @@ in your python project env.
 ```python
 from vibescraper import vibe_search
 
-ai_summary = await vibe_search(query='What is the state of the software development job market in 2025?', domain_count=10, model='gpt-4o')
+ai_summary = await vibe_search(query='What is the state of the software development job market in 2025?', domain_count=10, text_model='gpt-4o')
 ```
 
 ## Environment Variables
