@@ -1,0 +1,5 @@
+__pycache__/
+embeddings.db
+searched_urls.txt
+results/
+dist/
