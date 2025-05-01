@@ -49,7 +49,7 @@ in your python project env.
 - Install the package into your python project, then import the vibe_search function
 
 ```python
-from vibescraper import vibe_search
+from vibescraper.vibe_search import vibe_search
 
 ai_summary = await vibe_search(query='What is the state of the software development job market in 2025?', domain_count=10, text_model='gpt-4o')
 ```
