@@ -1,8 +1,8 @@
 from typing import Dict, List, Optional, Union
 import numpy as np
 import asyncio
-from src.vibescraper.openai_utils import get_embedding, generate
-from src.vibescraper.json_utils import save_page_json, save_combined_json
+from vibescraper.openai_utils import get_embedding, generate
+from vibescraper.json_utils import save_page_json, save_combined_json
 import re
 import ast
 import json
@@ -10,7 +10,7 @@ import os
 import inspect
 import sys
 import subprocess
-from src.vibescraper.timer_decorator import timer
+from vibescraper.timer_decorator import timer
 
 
 class PageEmbeddingProcessor:
