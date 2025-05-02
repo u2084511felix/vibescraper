@@ -91,7 +91,7 @@ class PageEmbeddingProcessor:
 
 
         summary_str = f'Given the following query: {
-            self.search_query}, please summarize the following to information scraped from {self.page_url}: '
+            self.search_query}, please summarize the following information scraped from {self.page_url}: '
 
         chunk_string = ''
         for result in results:
@@ -99,7 +99,7 @@ class PageEmbeddingProcessor:
 
         summary_str += chunk_string
 
-        system_message = 'You goal is to summarize a given set of scraped web data into a summary given a query. Create a fully referenced summary such that any information contained in the summary has a sourced reference in brackets as follows: (reference: <quote>, source: <url>)'
+        system_message = 'You goal is to summarize a given set of scraped web data into a summary, based on a query. Create a fully referenced summary such that any information contained in the summary has a sourced reference in brackets as follows: (reference: <quote>, source: <url>). Note, the <quote> MUST be an actual snippet from the given source material, and the source <url> must be the exact given source url that snippet was taken from.'
 
         self.page_summary = await generate(system_message, summary_str, model=self.text_model)
         print('Generated page summary for: ', self.page_url)
@@ -232,7 +232,8 @@ class CombinedResultsProcessor:
 
         summary_str += page_summary
 
-        system_message = 'You goal is to write a report no more than 1000 words long about a topic, given a query string and a set of summaries from source material. The summaries contain references. Please use these references to create a fully referenced report such that any information contained in the report has a sourced reference in brackets as follows: (reference: <quote>, source: <url>).'
+        system_message = 'You goal is to write a report no more than 1000 words long about a topic, given a query string and a set of summaries from source material. The summaries contain references. Please use these references to create a fully referenced report such that any information contained in the report has a sourced reference in brackets as follows: (reference: <quote>, source: <url>). Note, the <quote> MUST be an actual snippet from the given source material, and the source <url> must be the exact given source url that snippet was taken from.'
+
 
         self.combined_summary = await generate(system_message, summary_str, model=self.text_model)
         print('Generated combined summary: ')
