@@ -1,4 +1,5 @@
 __pycache__/
+poetry.lock
 embeddings.db
 searched_urls.txt
 results/
