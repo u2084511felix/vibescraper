@@ -1,6 +1,6 @@
 [project]
 name = "vibescraper"
-version = "0.1.3"
+version = "0.1.4"
 description = "A semantic web scraping and summarization toolkit."
 authors = [
     {name = "u2084511felix", email = "79988595+u2084511felix@users.noreply.github.com"}
@@ -24,6 +24,8 @@ packages = [{ include = "vibescraper", from = "src" }]
 
 [project.scripts]
 check-api-keys = "vibescraper.check_api_keys:main"
+change-search-api = "vibescraper.change_search_api:main"
+
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

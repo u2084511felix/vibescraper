@@ -2,7 +2,22 @@
 
 **vibescraper** is a Python utility that generates an AI summary of web results based on a search query.
 
+This is very much a work in progress. The results of each search may vary depending on how well the parser handles the pages. If you find that some results are not sufficient, you can try increasing the number of sites to return in the search api using the domain_count argument in the vibe_search function.
+
+The number of sites will slow the operation down, so you may need to experiment and find the optimal tradeoff that suits your needs, between speed and accuracy of results.
+
+In order to select the search api you need to run the following in your projects python environment:
+    - change-search-api <google/brave>
+
+
+The output files and folders from the search operations can be used or discarded as you need.
+In future I may change this so that the datbase can be saved or discarded according to an argument flag in the vibe_search function or as part of another python config script.
+
 ---
+
+
+
+
 
 ## How it works
 

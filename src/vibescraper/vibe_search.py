@@ -5,7 +5,9 @@ from vibescraper.page_embedder import PageEmbeddingProcessor, CombinedResultsPro
 from vibescraper.html_parser import process_html_with_semantic_chunker
 from vibescraper.brave_search import brave_search
 from vibescraper.db_schema import DBManager
-from vibescraper.config import search_engine 
+
+
+from vibescraper.change_search_api import search_engine
 
 # --------- HTML FETCHING ---------
 
