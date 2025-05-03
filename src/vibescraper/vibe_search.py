@@ -7,7 +7,7 @@ from vibescraper.brave_search import brave_search
 from vibescraper.db_schema import DBManager
 
 
-from vibescraper.change_search_api import search_engine
+from vibescraper.config import search_engine
 
 # --------- HTML FETCHING ---------
 
