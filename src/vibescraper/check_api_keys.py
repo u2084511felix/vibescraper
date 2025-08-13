@@ -45,6 +45,7 @@ def main():
         config_lines += f'{brave_key_name} = os.getenv("{brave_key_name}")\n'
     else:
         config_lines += '# BRAVE_API_KEY = os.getenv("BRAVE_API_KEY")\n'
+        config_lines += 'search_engine = "google"\n'
 
     if google_key_name:
         config_lines += f'GOOGLE_API_KEY = os.getenv("{google_key_name}")\n'
