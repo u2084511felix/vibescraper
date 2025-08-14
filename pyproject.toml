@@ -1,6 +1,6 @@
 [project]
 name = "vibescraper"
-version = "0.1.6"
+version = "0.2.0"
 description = "A semantic web scraping and summarization toolkit."
 authors = [
     {name = "u2084511felix", email = "79988595+u2084511felix@users.noreply.github.com"}

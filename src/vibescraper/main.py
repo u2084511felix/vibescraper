@@ -13,8 +13,12 @@ def main():
 
 
     print(query)
-    results = asyncio.run(vibe_search(query, domain_count=10))
-#    results = asyncio.run(brave_search(query))
+    #results = asyncio.run(vibe_search(query))
+    results = asyncio.run(brave_search(query, count=2))
+    for url in results:
+        print(url)
+
+    
 #    results = google_search(query, 10)
     print(results)
 

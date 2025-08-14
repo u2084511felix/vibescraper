@@ -5,7 +5,7 @@ from vibescraper.page_embedder import PageEmbeddingProcessor, CombinedResultsPro
 from vibescraper.html_parser import process_html_with_semantic_chunker
 from vibescraper.brave_search import brave_search
 from vibescraper.db_schema import DBManager
-
+import json
 
 from vibescraper.config import search_engine
 
@@ -43,12 +43,20 @@ async def vibe_search(query, text_model='gpt-4o', embedding_model='small', dimen
     db = DBManager()
     db.create_tables()
 
+
+    query = query.strip('"')
+
+
+
     print(f"Starting {search_engine} search: {query}")
 
     if search_engine == 'brave':
-        urls = await brave_search(query, count=domain_count)
+        print("================ Using Brave search engine ================")
+        urls = await brave_search(query, count=5)
     else:
+        print("================ Using Google search engine ================")
         search_results = google_search(query, num_results=domain_count)
+
         urls = [r["link"] for r in search_results]
 
     combined_processor = CombinedResultsProcessor(query, text_model=text_model, embedding_model=embedding_model, dimensions=dimensions, top_k=top_k)
