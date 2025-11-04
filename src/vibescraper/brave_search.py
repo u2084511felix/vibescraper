@@ -2,7 +2,7 @@ import os
 import time
 from urllib.parse import urljoin
 import requests
-from vibescraper.config import BRAVE_API_KEY
+from vibescraper.config import BRAVE_API_KEY, brave_client
 
 API_KEY = BRAVE_API_KEY
 
@@ -77,6 +77,21 @@ def get_brave_search(
     except Exception as e:
         raw_text = resp_web.text
         return f"Web search returned non-JSON response: {str(e)}\nContent: {raw_text[:200]}"
+
+
+async def brave_summary(query: str):
+    completions = brave_client.chat.completions.create(
+      messages=[
+        {
+          "role": "user",
+          "content": query,
+        }
+      ],
+      model="brave-pro",
+      stream=False,
+    )
+
+    return completions.choices[0].message.content
 
 
 async def brave_search(query: str, count: int = 10, extra_snippets: int = 0, result_filter: str = None):

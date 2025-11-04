@@ -26,7 +26,8 @@ def fetch_html(url):
 # --------- Vibe search scrape and summarize ---------
 
 
-async def vibe_search(query, text_model='gpt-4o', embedding_model='small', dimensions=1536, top_k=5, domain_count=5):
+
+async def vibe_search(query, text_model='gpt_4_1_mini', embedding_model='small', dimensions=1536, top_k=5, domain_count=5):
     """
     Args: 
         query - search string

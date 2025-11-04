@@ -5,6 +5,10 @@ client = OpenAI(
     api_key=os.getenv("OPENAI_API_KEY")
 )
 
+brave_client = OpenAI(
+    api_key=os.getenv("BRAVE_API_KEY"),
+    base_url="https://api.search.brave.com/res/v1",
+)
 #search_engine = "google"
 search_engine = "brave"
 #NOTE: After installing you must run 'check-api-keys' in the terminal to import your api keys from your environment correctly.
